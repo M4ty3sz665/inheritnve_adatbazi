@@ -12,9 +12,13 @@ namespace inheritnve_adatbazi
 {
     public partial class Form1 : Form
     {
+        dtbasehandler db;
         public Form1()
         {
+
             InitializeComponent();
+            db = new dtbasehandler();
+            db.readAll();
         }
     }
 }
