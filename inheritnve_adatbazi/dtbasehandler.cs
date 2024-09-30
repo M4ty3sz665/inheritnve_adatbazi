@@ -43,6 +43,24 @@ namespace inheritnve_adatbazi
             }
         }
 
+        public void deleteOne(car oneCar)
+        {
+            try
+            {
+                connection.Open();
+                string query = $"Delete from {table} where id = {oneCar.id}";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.ExecuteNonQuery();
+                command.Dispose();
+                connection.Close();
+                MessageBox.Show("delete one");
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "error:");
+            }
+        }
+
         public void readAll()
         {
             try

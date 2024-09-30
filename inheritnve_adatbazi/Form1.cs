@@ -25,7 +25,9 @@ namespace inheritnve_adatbazi
             oneCar.make = "VW";
             oneCar.model = "bogár";
             oneCar.year = 1973;
-            db.addOne(oneCar);  
+            oneCar.id = 1;
+            //db.addOne(oneCar);
+            db.deleteOne(oneCar);
         }
     }
 }
