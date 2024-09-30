@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace inheritnve_adatbazi
 {
-    class car
+    public class car
     {
         public static List<car> cars = new List<car>();
         public string make { get; set; }

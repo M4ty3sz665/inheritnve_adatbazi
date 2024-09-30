@@ -11,6 +11,7 @@ namespace inheritnve_adatbazi
     class dtbasehandler
     {
         MySqlConnection connection;
+        string table = "cars";
         public dtbasehandler()
         {
             string username = "root";
@@ -22,6 +23,26 @@ namespace inheritnve_adatbazi
 
             connection = new MySqlConnection(connectionstring);
         }
+
+        public void addOne(car oneCar)
+        {
+            try
+            {
+                connection.Open();
+                string query = $"Insert into {table}(make,model,color,year,power) " + $"values('{oneCar.make}','{oneCar.model}','{oneCar.color}','{oneCar.year}','{oneCar.hp}')";
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.ExecuteNonQuery();
+                command.Dispose();
+                connection.Close();
+                MessageBox.Show("sikerult");
+            }
+            catch (Exception)
+            {
+
+                
+            }
+        }
+
         public void readAll()
         {
             try

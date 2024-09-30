@@ -19,6 +19,13 @@ namespace inheritnve_adatbazi
             InitializeComponent();
             db = new dtbasehandler();
             db.readAll();
+            car oneCar = new car();
+            oneCar.color = "piros";
+            oneCar.hp = 500;
+            oneCar.make = "VW";
+            oneCar.model = "bogár";
+            oneCar.year = 1973;
+            db.addOne(oneCar);  
         }
     }
 }
